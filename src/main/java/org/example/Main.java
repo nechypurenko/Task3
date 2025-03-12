@@ -1,17 +1,35 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+
+public class Main {
+
+    public static Map<String, Integer> countDuplicates(List<String> strings) {
+        Map<String, Integer> countMap = new HashMap<>();
+        for (String str : strings) {
+            if (countMap.containsKey(str)) {
+                countMap.put(str, countMap.get(str) + 1);
+            } else {
+                countMap.put(str, 1);
+            }
         }
+
+        Map<String, Integer> duplicates = new HashMap<>();
+        for (Map.Entry<String, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                duplicates.put(entry.getKey(), entry.getValue());
+            }
+        }
+
+        return duplicates;
+    }
+
+    public static void main(String[] args) {
+        List<String> strings = List.of("dog", "cat", "bird", "dog", "cat", "elephant", "dog");
+        Map<String, Integer> duplicates = countDuplicates(strings);
+        System.out.println(duplicates);
     }
 }
