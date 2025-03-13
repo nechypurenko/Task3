@@ -6,9 +6,18 @@ The function `countDuplicates` works as follows:
 3. After counting, the function loops through the entries in `countMap` to identify strings with counts greater than 1 (duplicates) and adds them to the `duplicates` map.
 4. The `duplicates` map is then returned as the result.
 
-### Time Complexity:
-- **O(n)**: The time complexity of the solution is linear, as it requires two separate loops: one for counting and another for filtering duplicates. Both loops are O(n), where n is the size of the input list.
+Simplicity:
 
-### Space Complexity:
-- **O(n)**: The space complexity is O(n) because we store the string counts in a map. In the worst case, if all strings are unique, the map will hold n entries.
+The logic is straightforward:
+  First, count occurrences of each string.
+  Then, filter out the entries that occur more than once.
+
+Readability:
+
+The separation of counting and filtering steps makes the code easy to read and understand.
+
+Time Complexity:
+
+Both loops iterate over the list or map once, resulting in an overall time complexity of O(n).
+Lookup and insert operations in a HashMap are O(1) on average.
 
