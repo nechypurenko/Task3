@@ -9,8 +9,9 @@ The function `countDuplicates` works as follows:
 Simplicity:
 
 The logic is straightforward:
-  1.First, count occurrences of each string.
-  2.Then, filter out the entries that occur more than once.
+
+1.First, count occurrences of each string.
+2.Then, filter out the entries that occur more than once.
 
 Readability:
 
